@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/strategiesFragment">
+
+    <fragment
+        android:id="@+id/strategiesFragment"
+        android:name="com.example.bettingstrategies.strategies.StrategiesFragment"
+        android:label="Betting strategies"
+        tools:layout="@layout/fragment_strategies" >
+        <action
+            android:id="@+id/action_strategiesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.bettingstrategies.detail.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="selectedStrategy"
+            app:argType="com.example.bettingstrategies.database.Strategy"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.bettingstrategies.favorite.FavoriteFragment"
+        android:label="Favorite strategies"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
